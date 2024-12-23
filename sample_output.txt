@@ -1,0 +1,240 @@
+Input graph: 
+Edge ( 0,  2): weight=15
+Edge ( 0,  4): weight=13
+Edge ( 0,  5): weight=14
+Edge ( 0,  6): weight=16
+Edge ( 0,  8): weight= 5
+Edge ( 0,  9): weight=28
+Edge ( 0, 10): weight=25
+Edge ( 0, 11): weight= 5
+Edge ( 0, 12): weight=18
+Edge ( 0, 14): weight=10
+Edge ( 0, 16): weight= 3
+Edge ( 0, 18): weight=19
+Edge ( 0, 19): weight= 2
+Edge ( 1,  2): weight= 7
+Edge ( 1,  4): weight=12
+Edge ( 1,  6): weight= 9
+Edge ( 1,  8): weight=15
+Edge ( 1, 11): weight=12
+Edge ( 1, 12): weight= 9
+Edge ( 1, 13): weight=27
+Edge ( 1, 15): weight= 3
+Edge ( 1, 19): weight= 8
+Edge ( 2,  3): weight=15
+Edge ( 2,  4): weight= 3
+Edge ( 2,  5): weight=30
+Edge ( 2,  6): weight= 6
+Edge ( 2,  7): weight=13
+Edge ( 2,  8): weight=10
+Edge ( 2,  9): weight= 3
+Edge ( 2, 10): weight= 6
+Edge ( 2, 11): weight=22
+Edge ( 2, 14): weight=27
+Edge ( 2, 15): weight=11
+Edge ( 2, 16): weight=11
+Edge ( 2, 17): weight= 3
+Edge ( 2, 18): weight=13
+Edge ( 2, 19): weight=26
+Edge ( 3,  4): weight=16
+Edge ( 3,  5): weight=11
+Edge ( 3,  8): weight=11
+Edge ( 3,  9): weight=10
+Edge ( 3, 10): weight=29
+Edge ( 3, 11): weight=20
+Edge ( 3, 13): weight=30
+Edge ( 3, 14): weight=19
+Edge ( 3, 15): weight=20
+Edge ( 3, 18): weight= 7
+Edge ( 3, 19): weight=30
+Edge ( 4,  5): weight=17
+Edge ( 4,  7): weight= 3
+Edge ( 4, 10): weight=11
+Edge ( 4, 11): weight= 6
+Edge ( 4, 13): weight=26
+Edge ( 4, 14): weight=23
+Edge ( 4, 15): weight=10
+Edge ( 4, 16): weight=24
+Edge ( 4, 17): weight=23
+Edge ( 4, 19): weight=19
+Edge ( 5,  6): weight=29
+Edge ( 5,  7): weight=20
+Edge ( 5, 10): weight= 4
+Edge ( 5, 12): weight= 6
+Edge ( 5, 15): weight= 9
+Edge ( 5, 17): weight=28
+Edge ( 5, 18): weight= 1
+Edge ( 5, 19): weight=29
+Edge ( 6,  7): weight=24
+Edge ( 6,  8): weight= 9
+Edge ( 6,  9): weight= 8
+Edge ( 6, 10): weight=22
+Edge ( 6, 11): weight= 5
+Edge ( 6, 13): weight=27
+Edge ( 6, 14): weight= 2
+Edge ( 6, 15): weight=19
+Edge ( 6, 16): weight=12
+Edge ( 6, 17): weight= 5
+Edge ( 6, 19): weight= 7
+Edge ( 7,  8): weight=14
+Edge ( 7,  9): weight=29
+Edge ( 7, 10): weight= 5
+Edge ( 7, 11): weight=30
+Edge ( 7, 12): weight=10
+Edge ( 7, 13): weight= 6
+Edge ( 7, 14): weight=21
+Edge ( 7, 15): weight=11
+Edge ( 7, 16): weight=17
+Edge ( 7, 17): weight=10
+Edge ( 7, 18): weight=27
+Edge ( 7, 19): weight=27
+Edge ( 8, 10): weight=28
+Edge ( 8, 12): weight=28
+Edge ( 8, 13): weight= 3
+Edge ( 8, 14): weight=25
+Edge ( 8, 16): weight=19
+Edge ( 8, 17): weight=22
+Edge ( 9, 10): weight= 1
+Edge ( 9, 16): weight=20
+Edge ( 9, 17): weight=28
+Edge ( 9, 18): weight=29
+Edge (10, 12): weight=22
+Edge (10, 17): weight=16
+Edge (10, 18): weight=10
+Edge (10, 19): weight=19
+Edge (11, 12): weight=10
+Edge (11, 13): weight= 9
+Edge (11, 14): weight=23
+Edge (11, 15): weight=15
+Edge (11, 16): weight=19
+Edge (11, 17): weight= 3
+Edge (11, 18): weight=12
+Edge (12, 16): weight=11
+Edge (12, 17): weight=23
+Edge (12, 18): weight= 4
+Edge (13, 14): weight=14
+Edge (13, 16): weight= 3
+Edge (13, 18): weight=12
+Edge (13, 19): weight= 8
+Edge (14, 16): weight=15
+Edge (15, 17): weight= 1
+Edge (15, 18): weight= 4
+Edge (16, 17): weight= 3
+Edge (16, 18): weight= 6
+Edge (17, 18): weight=21
+Edge (18, 19): weight= 1
+Total cost: 1799
+
+	Average shortest path for every node (Dijkstra algorithm): 
+Node 0: 7.157895
+Node 1: 9.000000
+Node 2: 7.052632
+Node 3: 12.210526
+Node 4: 9.052632
+Node 5: 6.894737
+Node 6: 8.368421
+Node 7: 9.421053
+Node 8: 9.473684
+Node 9: 7.736842
+Node 10: 7.894737
+Node 11: 7.631579
+Node 12: 9.631579
+Node 13: 8.894737
+Node 14: 10.210526
+Node 15: 6.263158
+Node 16: 7.052632
+Node 17: 5.947368
+Node 18: 6.368421
+Node 19: 6.578947
+
+	Average shortest path for every node (Floyd-Warshall algorithm): 
+Node 0: 2.315789
+Node 1: 2.578947
+Node 2: 3.684211
+Node 3: 2.578947
+Node 4: 5.263158
+Node 5: 2.421053
+Node 6: 4.157895
+Node 7: 2.578947
+Node 8: 5.368421
+Node 9: 2.421053
+Node 10: 2.421053
+Node 11: 5.210526
+Node 12: 6.210526
+Node 13: 2.578947
+Node 14: 2.421053
+Node 15: 2.578947
+Node 16: 2.421053
+Node 17: 2.578947
+Node 18: 2.421053
+Node 19: 3.368421
+
+	Average shortest path for every node (Bellman-Ford algorithm): 
+Node 0: 7.157895
+Node 1: 9.000000
+Node 2: 7.052632
+Node 3: 12.210526
+Node 4: 9.052632
+Node 5: 6.894737
+Node 6: 8.368421
+Node 7: 9.421053
+Node 8: 9.473684
+Node 9: 7.736842
+Node 10: 7.894737
+Node 11: 7.631579
+Node 12: 9.631579
+Node 13: 8.894737
+Node 14: 10.210526
+Node 15: 6.263158
+Node 16: 7.052632
+Node 17: 5.947368
+Node 18: 6.368421
+Node 19: 6.578947
+
+
+MST: Kruskal algorithm demo
+Edge ( 0, 16): weight= 3
+Edge ( 0, 19): weight= 2
+Edge ( 1, 15): weight= 3
+Edge ( 2,  4): weight= 3
+Edge ( 2,  9): weight= 3
+Edge ( 2, 17): weight= 3
+Edge ( 4,  7): weight= 3
+Edge ( 5, 10): weight= 4
+Edge ( 5, 18): weight= 1
+Edge ( 6, 14): weight= 2
+Edge ( 8, 13): weight= 3
+Edge ( 9, 10): weight= 1
+Edge (11, 17): weight= 3
+Edge (12, 18): weight= 4
+Edge (13, 16): weight= 3
+Edge (15, 17): weight= 1
+Edge (15, 18): weight= 4
+Edge (16, 17): weight= 3
+Edge (18, 19): weight= 1
+Total cost: 50
+
+
+MST: Prim algorithm demo
+Edge ( 0, 16): weight= 3
+Edge ( 0, 19): weight= 2
+Edge ( 1, 15): weight= 3
+Edge ( 2,  4): weight= 3
+Edge ( 2,  9): weight= 3
+Edge ( 2, 17): weight= 3
+Edge ( 3, 18): weight= 7
+Edge ( 4,  7): weight= 3
+Edge ( 5, 18): weight= 1
+Edge ( 6, 11): weight= 5
+Edge ( 6, 14): weight= 2
+Edge ( 8, 13): weight= 3
+Edge ( 9, 10): weight= 1
+Edge (11, 17): weight= 3
+Edge (12, 18): weight= 4
+Edge (13, 16): weight= 3
+Edge (15, 17): weight= 1
+Edge (16, 17): weight= 3
+Edge (18, 19): weight= 1
+Total cost: 54
+
+
