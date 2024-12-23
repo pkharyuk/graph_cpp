@@ -397,6 +397,4 @@ Graph<uint>* sample_random_undirected_uint_graph(
     return g;
 }
 
-
-
 // Author: Pavel Kharyuk, 2024

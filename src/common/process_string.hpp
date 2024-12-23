@@ -1,7 +1,3 @@
-// This module is designed for extracting a
-// rational number array from the input file by
-// a character-wise processing.
-
 #ifndef __PROCESS_STRING_HPP__
 #define __PROCESS_STRING_HPP__
 
@@ -12,7 +8,6 @@
 
 void resize_string(char **s, uint old_size, uint new_size);
 void string_to_uint_vec(const char *s, uint **a, uint *n);
-
 
 // Few functions for string processing
 

@@ -32,3 +32,5 @@ private:
 #include "minimum_spanning_tree.tpp"
 
 #endif
+
+// Author: Pavel Kharyuk, 2024

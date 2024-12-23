@@ -221,3 +221,6 @@ void MinSpanningTree<W>::kruskal(
     delete_2d_array(edges, n_edges);
     success = true;
 }
+
+// Author: Pavel Kharyuk, 2024
+

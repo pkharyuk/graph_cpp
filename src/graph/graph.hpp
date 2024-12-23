@@ -83,3 +83,5 @@ Graph<uint>* sample_random_undirected_uint_graph(
 #include "graph.tpp"
 
 #endif
+
+// Author: Pavel Kharyuk, 2024

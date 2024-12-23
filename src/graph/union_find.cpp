@@ -31,3 +31,5 @@ void uf_union(uint *& preds, uint *& ranks, uint u, uint v, uint n)
         preds[v] = u;
     return;
 }
+
+// Author: Pavel Kharyuk, 2024

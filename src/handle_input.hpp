@@ -1,7 +1,3 @@
-/* This module is designed for extracting a
-rational number array from the input file by
-a character-wise processing. */
-
 #ifndef __HANDLE_INPUT_H__
 #define __HANDLE_INPUT_H__
 

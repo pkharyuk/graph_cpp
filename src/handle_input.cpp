@@ -1,12 +1,13 @@
 #include "handle_input.hpp"
 
-/* Helper structure to work with char buffer */
+// Helper structure to work with char buffer
 struct CharBuffer { 
     char *buf;
     uint capacity;
     uint pos;
     uint len;
-    bool seen_data; /* whether a new number is started or not */
+    bool seen_data; // whether a new number is started or not
+    
 public:
     CharBuffer()
         : capacity(buffer_len)
@@ -20,6 +21,7 @@ public:
 
     char next();
     void flush_tabs_and_spaces();
+    
 private:
     CharBuffer(const CharBuffer& cbuf) {}; // copy prohibited
 };
@@ -41,7 +43,7 @@ char CharBuffer::next() {
     return c;
 }
 
-/* Flush tab/spaces starting from the current buffer position */
+// Flush tab/spaces starting from the current buffer position
 void CharBuffer::flush_tabs_and_spaces()
 {
     while (

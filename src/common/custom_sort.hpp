@@ -38,3 +38,5 @@ void quicksort(
 }
 
 #endif
+
+// Author: Pavel Kharyuk, 202
