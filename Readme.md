@@ -1,4 +1,4 @@
-# Graph: C++ implementaion
+# Graph: C++ implementation
 
 ## About
 
