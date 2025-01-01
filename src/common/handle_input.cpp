@@ -1,58 +1,5 @@
 #include "handle_input.hpp"
 
-// Helper structure to work with char buffer
-struct CharBuffer { 
-    char *buf;
-    uint capacity;
-    uint pos;
-    uint len;
-    bool seen_data; // whether a new number is started or not
-    
-public:
-    CharBuffer()
-        : capacity(buffer_len)
-        , pos(buffer_len)
-        , len(buffer_len)
-        , seen_data(false)
-        { buf = new char[capacity]; }
-
-    ~CharBuffer()
-        { if (buf) delete[] buf; }
-
-    char next();
-    void flush_tabs_and_spaces();
-    
-private:
-    CharBuffer(const CharBuffer& cbuf) {}; // copy prohibited
-};
-
-char CharBuffer::next() {
-    if (this->pos >= this->len) {
-        fprintf(
-            stderr,
-            "CharBuffer::next() : invalid buffer position encountered\n"
-        );
-        exit(EXIT_FAILURE);
-    }
-    char c = this->buf[this->pos];
-    this->pos += 1;
-    if (is_tab_or_space(c) || is_newline(c))
-        this->seen_data = false;
-    else
-        this->seen_data = true;
-    return c;
-}
-
-// Flush tab/spaces starting from the current buffer position
-void CharBuffer::flush_tabs_and_spaces()
-{
-    while (
-        (this->pos < this->len)
-        && is_tab_or_space(this->buf[this->pos])
-    ) {
-        this->pos += 1;
-    }
-}
 
 // class TextFileReader
 

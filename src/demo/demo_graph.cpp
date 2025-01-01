@@ -1,8 +1,11 @@
 #include "custom_types.hpp"
 #include "graph.hpp"
+#include "sample_graph.hpp"
 #include "shortest_path.hpp"
 #include "handle_cl_args.hpp"
 #include "minimum_spanning_tree.hpp"
+
+template class Graph<uint>;
 
 typedef class Graph<uint> UIntGraph;
 typedef class MinSpanningTree<uint> UIntMST;

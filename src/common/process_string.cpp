@@ -8,7 +8,8 @@ void resize_string(char **s, uint old_size, uint new_size)
 static uint get_uint_from_string(const char *s, uint lpos, uint rpos)
 {
     char *tmp = new char[rpos-lpos+1];
-    for (uint i = lpos; i < lpos+rpos; i++)
+    //for (uint i = lpos; i < lpos+rpos; i++)
+    for (uint i = lpos; i < rpos; i++)
         tmp[i-lpos] = s[i];
     tmp[rpos-lpos] = '\0';
     uint rv = safe_atou(tmp);
@@ -31,14 +32,58 @@ void string_to_uint_vec(const char *s, uint **result, uint *size)
         }
         (*result)[*size] = get_uint_from_string(s, lpos, rpos);
         *size += 1;
-        lpos = rpos + 1;
+        //lpos = rpos + 1;
+        //rpos = lpos;
+        lpos = rpos;
+        if (s[rpos] == '\0')
+            break;
+        lpos += 1;
         rpos = lpos;
     }
-    if (lpos != rpos) {
+    //if (lpos != rpos) {
+    if (lpos < rpos && s[lpos] != '\0') {
         (*result)[*size] = get_uint_from_string(s, lpos, rpos);
         *size += 1;
     }
     resize_1d_array<uint>(result, n, *size);
+}
+
+void stripn_string(const char *src, char **dst, uint n, uint *new_n)
+{
+    //*dst = new char[n+1];
+    bool space_added = true; // no space in the beginning
+    *new_n = 0;
+    for (uint p = 0; p < n; p++) {
+        bool not_a_digit = is_tab_or_space(src[p]);
+        if (space_added && not_a_digit)
+            continue;
+        if (not_a_digit)
+            space_added = true;
+        else
+            space_added = false;
+        (*dst)[(*new_n)] = src[p];
+        *new_n += 1;
+    }
+    (*dst)[(*new_n)] = '\0';
+    if ((*new_n) < n)
+        resize_string(dst, n+2, (*new_n)+2);
+}
+
+bool is_line_uint_vec(const char *line)
+{
+    bool seen_space = true;
+    for (uint i = 0; line[i] != '\0'; i++) {
+        if (!seen_space && is_tab_or_space(line[i])) {
+            seen_space = true;
+            continue;
+        }
+        if (is_digit(line[i])) {
+            seen_space = false;
+            continue;
+        }
+        return false;
+    }
+    return true;
 }
 
 bool is_digit(char c)

@@ -71,15 +71,6 @@ private:
     void ind_to_edge(uint ind, uint& i, uint& j) const;
 };
 
-// Sample a random graph with natural weights
-Graph<uint>* sample_random_undirected_uint_graph(
-    seed_t& seed,
-    uint n_vertices,
-    double density = 0.1,
-    uint min_distance = 1,
-    uint max_distance = 1
-);
-
 #include "graph.tpp"
 
 #endif

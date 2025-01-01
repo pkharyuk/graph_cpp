@@ -189,7 +189,7 @@ void FloydWarshallResults<W>::flush()
 {
     delete_2d_array<uint>(this->preds, this->n_nodes);
     this->preds = 0;
-    delete_2d_array<uint>(this->dists, this->n_nodes);
+    delete_2d_array<W>(this->dists, this->n_nodes);
     this->dists = 0;
 }
 

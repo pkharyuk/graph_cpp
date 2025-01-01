@@ -7,6 +7,10 @@ class (Graph), Shortest Path finder (Dijkstra, Bellman-Ford and Floyd-Warshall a
 and Minimum Spanning Tree module (Prim and Kruskal algorithms). A graph can be imported
 from a formatted text file or be sampled randomly.
 
+On top of the graph representation, the Hex Game is implemented. Additional information can be found at the following link:
+- [https://en.wikipedia.org/wiki/Hex_(board_game)](https://en.wikipedia.org/wiki/Hex_(board_game))
+- [https://www.maths.ed.ac.uk/~csangwin/hex/HexCrossBoard.pdf](https://www.maths.ed.ac.uk/~csangwin/hex/HexCrossBoard.pdf)
+
 ## Project structure
 
 ### Makefile
@@ -15,8 +19,9 @@ Contains rules and shortcuts for several operations:
 
 - ```make compile```: compile basic modules and the demo program
 - ```make clean```: remove all compilation/build results
-- ```make run``` : run demo
-- ```make sample_compare``` : compare output of the demo for the sample_input with sample_output.txt
+- ```make run_demo_graph``` : run graph demo
+- ```make run_hex_game``` : run hex game
+- ```make sample_compare``` : compare output of the demo for the ```sample_input.txt``` with ```sample_output.txt```
 
 
 ### Bash scripts
@@ -33,23 +38,32 @@ To use it without prefixing bash, add executing rights to your user with ```chmo
 
 ### Source files
 
-- ```demo.c``` : main demo module
 - ```build/``` : directory for storing object files
 - ```src/``` : source code directory
     - ```common/``` : several generic routines / classes
+        - ```char_buffer.{h,c}pp``` : helper structure for working with characters
         - ```custom_random.{h,c,t}pp``` : sampling random numbers
-        - ```process_string.{h,c}pp``` : string operations
+        - ```custom_sort.hpp``` : custom sorting
         - ```custom_types.hpp``` : type definitions + a few common numeric constants
         - ```custom_utils.hpp``` : min/max/abs + memory allocation templates
-        - ```custom_sort.hpp``` : custom sorting
+        - ```handle_input.{h,c}pp``` : handling input from a text file
         - ```min_heap.{h,t}pp``` : custom min-heap implementation
+        - ```process_string.{h,c}pp``` : string operations
+    - ```demo/``` : graph demo sources
+        - ```demo_graph.cpp``` : main demo module
+        - ```handle_cl_args.{h,c}pp``` : handling command-line arguments
+    - ```game/``` : custom hex game implementation
+        - ```board.{h,c}pp``` : game board abstraction
+        - ```dialogue.{h,c}pp``` : CLI for dialogue with user
+        - ```game_types.{h,c}pp``` : type definitions, constants
+        - ```handle_cl_args.{h,c}pp``` : handling command-line arguments
+        - ```player.{h,c}pp``` : player abstractions (user, bot)
     - ```graph/``` : graph abstractions and algorithms
-        - ```graph.{h,t}pp``` : graph class + random graph sampler (with positive integer weights)
+        - ```graph.{h,t,c}pp``` : graph abstraction (templates)
         - ```minimum_spanning_tree.{h,t}pp``` : MST routines [Prim, Kruskal]
+        - ```sample_grph.{h,c}pp``` : random graph sampler (with positive integer weights)
         - ```shortest_path.{h,t}pp``` : Dijkstra, Floyd-Warshall, Bellman-Ford
         - ```union_find.{h,c}pp``` : helper module for Kruskal algorithm
-    - ```handle_cl_args.{h,c}pp``` : handling command-line arguments
-    - ```handle_input.{h,c}pp``` : handling input from a text file
     
 ## Comments
 

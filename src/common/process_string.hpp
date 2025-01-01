@@ -8,6 +8,8 @@
 
 void resize_string(char **s, uint old_size, uint new_size);
 void string_to_uint_vec(const char *s, uint **a, uint *n);
+void stripn_string(const char *src, char **dst, uint n, uint *new_n);
+bool is_line_uint_vec(const char *line);
 
 // Few functions for string processing
 

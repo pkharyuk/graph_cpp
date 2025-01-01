@@ -7,14 +7,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "process_string.hpp"
+#include "char_buffer.hpp"
 
 //#include "process_string.h"
 //#include "rational_number.h"
 
 enum { expected_data_len = 2 };
-enum { buffer_len = 1024 };
-
-class CharBuffer;
 
 class TextFileReader {
     const char *path;

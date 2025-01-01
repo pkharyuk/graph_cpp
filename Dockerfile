@@ -10,6 +10,5 @@ RUN apt update \
 WORKDIR /demo
 COPY ./ ./
 RUN chmod +x ./scripts.sh
-RUN ./scripts.sh compile
 
-CMD ["./scripts.sh", "run_demo"]
+CMD ["./scripts.sh", "compile"]

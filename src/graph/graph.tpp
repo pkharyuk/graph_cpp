@@ -73,7 +73,7 @@ void Graph<W>::set_edge_value(uint u, uint v, W weight, bool check_exists)
         );
         exit(EXIT_FAILURE);
     }
-    this->check_input_weight(weight);
+    //this->check_input_weight(weight);
     this->adjacency[u][v] = weight;
     if (!this->is_directed)
         this->adjacency[v][u] = weight;
@@ -213,43 +213,6 @@ Graph<W>::Graph(const char *fpath, bool is_directed)
     exit(EXIT_FAILURE);
 }
 
-// partial template
-template <>
-Graph<uint>::Graph(const char *fpath, bool is_directed)
-{
-    TextFileReader reader(fpath);
-    char *line = reader.read_line();
-    uint n_vertices = safe_atou(line);
-    delete[] line;
-
-    this->init(n_vertices, is_directed);
-
-    uint line_number = 1;
-    while ((line = reader.read_line()) != 0) {
-        uint *a = 0, n;
-        string_to_uint_vec(line, &a, &n);
-        switch (n) {
-            case two:
-                this->add_edge(a[0], a[1], 1);
-                break;
-            case three:
-                this->add_edge(a[0], a[1], (uint64) a[2]);
-                break;
-            default:
-                fprintf(
-                    stderr,
-                    "%s , line %u: expected %u or %u numbers per line\n",
-                    fpath, line_number+1, two, three
-                );
-                exit(EXIT_FAILURE);
-        }
-        if (line)
-            delete[] line;
-        if (a)
-            delete[] a;
-        line_number += 1;
-    }
-}
 
 template <class W>
 void Graph<W>::get_vertices(uint **vertices, uint *n) const
@@ -356,45 +319,6 @@ void Graph<W>::print_edges(const char *weight_format_str) const
     printf("\n");
 }
 
-// custom graph sampler
-Graph<uint>* sample_random_undirected_uint_graph(
-    seed_t& seed,
-    uint n_vertices,
-    double density,
-    uint min_distance,
-    uint max_distance
-)
-{
-    const char *func_name = "sample_random_undirected_graph";
-    if (density < 0 || density > 1) {
-        fprintf(
-            stderr,
-            "%s : density is out from [0, 1]",
-            func_name
-        );
-        exit(EXIT_FAILURE);
-    }
-    Graph<uint> *g = new Graph<uint>(n_vertices, false);
-    
-    uint n_full_edges = n_vertices*(n_vertices - 1)/2;
-    uint n_edges = (uint) (density*n_full_edges + 0.5);
-    uint *weights = (uint *) vec_random_integer_draw(
-        seed, n_edges, min_distance, max_distance
-    );
-    uint *indices = new uint[n_full_edges];
-    for (uint k = 0; k < n_full_edges; k++)
-        indices[k] = k;
-    shuffle(seed, indices, n_full_edges, n_edges);
-    for (uint k = 0; k < n_edges; k++) {
-        //uint i, j;
-        //ind_to_edge(n_vertices, indices[k], i, j);
-        //printf("%u -> (%u, %u)\n", indices[k], i, j);
-        //g->add_edge(i, j, weights[k]);
-        g->add_edge(indices[k], weights[k]);
-    }
-    delete[] weights;
-    delete[] indices;
-    return g;
-}
+//template class Graph<uint>;
 
 // Author: Pavel Kharyuk, 2024
